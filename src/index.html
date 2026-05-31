@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <header class="site-header">
+        <button class="burger" id="burger" aria-label="Open menu">&#9776;</button>
+    </header>
+
+    <section class="banner">
+        <h1>Let Make Something Great</h1>
+        <p>Lorem ipsum dolor sit amet consectelur adipisicing elit. Velit, incidunt?</p>
+    </section>
+
+    <section class="portfolio">
+
+
+        <h2 class="portfolio__title">Portfolio</h2>
+
+
+        <nav class="portfolio__tabs" role="tablist">
+            <button
+                class="tab tab--active"
+                id="clientsBtn"
+                role="tab"
+                aria-selected="true"
+                aria-controls="cardsContainer"
+            >Clients</button>
+            <button
+                class="tab"
+                id="productsBtn"
+                role="tab"
+                aria-selected="false"
+                aria-controls="cardsContainer"
+            >Products</button>
+            <button
+                class="tab"
+                id="feedbackBtn"
+                role="tab"
+                aria-selected="false"
+                aria-controls="cardsContainer"
+            >Feedback</button>
+        </nav>
+
+
+        <div class="cards-grid" id="cardsContainer" role="tabpanel">
+      
+        </div>
+
+    </section>
+
+
+    <section class="subscribe">
+        <h3 class="subscribe__heading">I WANT TO GET FRESH UPDATES</h3>
+        <div class="subscribe__form">
+            <div class="form-group">
+                <label class="form-label" for="firstName">FIRST NAME</label>
+                <input class="form-input" type="text" id="firstName" name="firstName" autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="email">EMAIL</label>
+                <input class="form-input" type="email" id="email" name="email" autocomplete="email" />
+            </div>
+            <div class="form-group form-group--checkbox">
+                <input class="form-checkbox" type="checkbox" id="agree" name="agree" />
+                <label class="form-label form-label--checkbox" for="agree">
+                    I agree to the privacy policy
+                </label>
+            </div>
+            <button class="btn-subscribe" type="button">Subscribe</button>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>All rights reserved 2023</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
