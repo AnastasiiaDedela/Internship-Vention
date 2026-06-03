@@ -1,0 +1,373 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+
+    --color-red:   #fb6470;
+    --color-dark:  #353541;
+    --color-white: #fff;
+    --color-blue:  #0093D5;
+    --color-beige:  #e2dfdabb;
+    --color-bg:         #f5f5f5;
+    --color-surface:    var(--color-white);
+    --color-border:     #e0e0e0;
+    --color-text:       var(--color-dark);
+    --color-text-muted: #888888;
+    --color-accent:     var(--color-red);
+
+    --font-base:            "Raleway", sans-serif;
+    --font-size-text:       16px;
+    --font-size-title:      24px;
+    --font-size-heading:    32px;
+    --font-size-main-heading: 48px;
+
+    --radius-card:      8px;
+    --radius-img:       50%;
+    --shadow-card:      0 1px 4px rgba(0, 0, 0, 0.08);
+    --gap-grid:         24px;
+    --padding-section:  40px 20px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-base);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: var(--font-size-text);
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    z-index: 10;
+}
+
+.banner {
+    position: relative;
+    background-image: url('../assets/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: 120px 20px 60px; 
+}
+.banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.3)  50%,
+        rgba(0, 0, 0, 0.85) 100%
+    );
+}
+
+
+.banner h1,
+.banner p {
+    position: relative;
+    z-index: 1;
+}
+
+.banner h1 {
+    font-size: var(--font-size-main-heading);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: var(--font-size-text);
+    color: #cccccc;
+}
+
+.burger {
+    color: var(--color-red);
+    font-size: 24px;
+    line-height: 2;
+    padding: 4px 8px;
+    transition: opacity 0.2s;
+}
+
+.burger:hover {
+    opacity: 0.7;
+}
+
+.portfolio {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--padding-section);
+}
+
+.portfolio__title {
+    font-size: var(--font-size-title);
+    font-weight: 400;
+    color: var(--color-dark);
+
+}
+
+.portfolio__tabs {
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--color-border);
+    margin-bottom: 28px;
+}
+
+.tab {
+    padding: 24px 20px;
+    font-size: var(--font-size-text);
+    font-family: var(--font-base);
+    color: var(--color-text-muted);
+    position: relative;
+    transition: color 0.2s;
+    white-space: nowrap;
+    color: var(--color-white);
+}
+
+.tab--active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-accent);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-grid);
+}
+
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 24px 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.card__avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: var(--radius-img);
+    object-fit: cover;
+    border: 3px solid var(--color-border);
+}
+
+.card__avatar--placeholder {
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #aaa;
+}
+
+.card__name {
+    font-size: var(--font-size-text);
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+.cards-loading,
+.cards-error {
+    grid-column: 1 / -1;   
+    text-align: center;
+    padding: 40px 0;
+    font-size: var(--font-size-text);
+    color: var(--color-text-muted);
+}
+
+.cards-error {
+    color: var(--color-red);
+}
+
+.subscribe {
+    background-color: var(--color-beige);
+    border-top: 1px solid var(--color-border);
+    padding: var(--padding-section);
+}
+
+.subscribe__heading {
+    font-size: var(--font-size-title);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.subscribe__form {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-group--checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.form-label--checkbox {
+    font-size: var(--font-size-text);
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--color-text);
+}
+
+.form-input {
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    background: transparent;
+    font-family: var(--font-base);
+    font-size: var(--font-size-text);
+    padding: 6px 0;
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    border-bottom-color: var(--color-accent);
+}
+
+.form-checkbox {
+    width: 14px;
+    height: 14px;
+    accent-color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.btn-subscribe {
+    align-self: flex-start;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-family: var(--font-base);
+    font-size: var(--font-size-text);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 10px 28px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    margin-top: 4px;
+}
+
+.btn-subscribe:hover {
+    background-color: #e04550;
+}
+
+.site-footer {
+
+    color: var(--color-dark);
+
+    font-size: var(--font-size-text);
+    padding: 40px 150px;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner h1 {
+        font-size: var(--font-size-heading); 
+    }
+
+    .tab {
+        padding: 10px 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banner {
+        padding: 40px 16px;
+    }
+
+    .banner h1 {
+        font-size: var(--font-size-title);
+    }
+
+    .portfolio {
+        padding: 24px 16px;
+    }
+
+    .portfolio__tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tab {
+        padding: 10px 14px;
+    }
+
+    .subscribe {
+        padding: 24px 16px;
+    }
+
+    .btn-subscribe {
+        width: 100%;
+        text-align: center;
+    }
+}
