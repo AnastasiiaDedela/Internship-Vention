@@ -11,7 +11,16 @@
 <body>
 
     <header class="site-header">
-        <button class="burger" id="burger" aria-label="Open menu">&#9776;</button>
+        <button class="burger" id="burger" aria-label="Open menu">
+            <svg viewBox="0 0 488 488" id="burger-menu" width="24" height="24" fill="currentColor">
+                <path d="M64.192,108.444h359.617c29.943,0,54.223-24.278,54.223-54.222C478.031,24.278,453.754,0,423.809,0H64.192
+            C34.248,0,9.969,24.278,9.969,54.222C9.969,84.166,34.248,108.444,64.192,108.444z" />
+                <path d="M423.809,189.778H64.192c-29.944,0-54.223,24.278-54.223,54.222c0,29.943,24.278,54.223,54.223,54.223h359.617
+            c29.945,0,54.223-24.279,54.223-54.223C478.031,214.056,453.754,189.778,423.809,189.778z" />
+                <path d="M423.809,379.557H64.192c-29.944,0-54.223,24.277-54.223,54.222C9.969,463.722,34.248,488,64.192,488h359.617
+            c29.945,0,54.223-24.278,54.223-54.222C478.031,403.834,453.754,379.557,423.809,379.557z" />
+            </svg>
+        </button>
     </header>
 
     <section class="banner">
@@ -26,38 +35,24 @@
 
 
         <nav class="portfolio__tabs" role="tablist">
-            <button
-                class="tab tab--active"
-                id="clientsBtn"
-                role="tab"
-                aria-selected="true"
-                aria-controls="cardsContainer"
-            >Clients</button>
-            <button
-                class="tab"
-                id="productsBtn"
-                role="tab"
-                aria-selected="false"
-                aria-controls="cardsContainer"
-            >Products</button>
-            <button
-                class="tab"
-                id="feedbackBtn"
-                role="tab"
-                aria-selected="false"
-                aria-controls="cardsContainer"
-            >Feedback</button>
+            <button class="tab tab--active" id="clientsBtn" role="tab" aria-selected="true"
+                aria-controls="cardsContainer">Clients</button>
+            <button class="tab" id="productsBtn" role="tab" aria-selected="false"
+                aria-controls="cardsContainer">Products</button>
+            <button class="tab" id="feedbackBtn" role="tab" aria-selected="false"
+                aria-controls="cardsContainer">Feedback</button>
         </nav>
 
 
         <div class="cards-grid" id="cardsContainer" role="tabpanel">
-      
+
         </div>
 
     </section>
 
 
     <section class="subscribe">
+        <div class="subscribe__wrapper">
         <h3 class="subscribe__heading">I WANT TO GET FRESH UPDATES</h3>
         <div class="subscribe__form">
             <div class="form-group">
@@ -71,15 +66,16 @@
             <div class="form-group form-group--checkbox">
                 <input class="form-checkbox" type="checkbox" id="agree" name="agree" />
                 <label class="form-label form-label--checkbox" for="agree">
-                    I agree to the privacy policy
+                    I consent to the processing of personal data
                 </label>
             </div>
             <button class="btn-subscribe" type="button">Subscribe</button>
         </div>
+        </div>
     </section>
 
     <footer class="site-footer">
-        <p>All rights reserved 2023</p>
+        <p>All right reserved 2023</p>
     </footer>
 
     <script src="js/script.js"></script>
