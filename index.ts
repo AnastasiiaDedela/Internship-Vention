@@ -1,4 +1,5 @@
 //Challenge 1: The Blind Parser
+function hasKey<K extends string>(obj: object, key: K): obj is Record<K, unknown> { return key in obj; }
 
 function getUserNameFromJSON(jsonString: string): string | null {
   let data: unknown;
@@ -11,13 +12,13 @@ function getUserNameFromJSON(jsonString: string): string | null {
 
   if (typeof data !== "object" || data === null) return null;
 
-  const dataObj = data as { user?: unknown };
-  if (typeof dataObj.user !== "object" || dataObj.user === null) return null;
+  if (!hasKey(data, "user")) return null;
+  if (typeof data["user"] !== "object" || data["user"] === null) return null;
 
-  const userObj = dataObj.user as { name?: unknown };
-  if (typeof userObj.name !== "string") return null;
+  if (!hasKey(data["user"], "name")) return null;       
+  if (typeof data["user"]["name"] !== "string") return null; 
 
-  return userObj.name;
+  return data.user.name;
 }
 
 console.log(getUserNameFromJSON('{"user":{"name":"Alice"}}'));
@@ -117,6 +118,7 @@ function renderUI(state: Status) {
   }
 
   const _exhaustiveCheck: never = state;
+  throw new Error(`Unhandled state: ${_exhaustiveCheck}`);
 }
 
 console.log(renderUI({ status: 'loading' }));
@@ -157,7 +159,7 @@ interface Product {
 }
 
 type CreatePayload = Omit<Product, "id" | "createdAt" | "updatedAt">
-type UpdatePayload = { id: string } & Partial<Omit<Product, "id">>
+type UpdatePayload = Pick<Product, "id"> & Partial<Omit<Product, "id">>
 type ClientPreview = Readonly<Pick<Product, "id" | "title" | "price">>
 
 const create: CreatePayload = { title: "Widget", description: "A fine widget", price: 9.99, discount: 0 };
