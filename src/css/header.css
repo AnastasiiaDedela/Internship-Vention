@@ -1,0 +1,16 @@
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+  padding: 20px;
+}
+
+.burger {
+  background: none;
+  border: none;
+  color: var(--color-red);
+  cursor: pointer;
+}

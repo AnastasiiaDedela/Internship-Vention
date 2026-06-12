@@ -1,0 +1,87 @@
+@media (max-width: 1024px) and (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    gap: 25px;
+  }
+
+  .banner h1 {
+    font-size: var(--font-size-heading);
+  }
+
+  .tab {
+    padding: 10px 18px;
+  }
+
+  .card {
+    padding: 40px 16px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    box-shadow: var(--shadow-card);
+    transition:
+      box-shadow 0.2s,
+      transform 0.2s;
+  }
+
+  .card__avatar {
+    width: 230px;
+    height: 230px;
+  }
+
+  .site-footer {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header {
+    padding-bottom: 10px;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 100px;
+    row-gap: 5px;
+  }
+
+  .banner {
+    min-height: 300px;
+    padding: 0 14px;
+  }
+
+  .banner h1 {
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-regular);
+    margin-bottom: 20px;
+  }
+
+  .banner p {
+    font-size: var(--font-size-text);
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 80%;
+  }
+
+  .portfolio {
+    padding: 24px 16px;
+  }
+
+  .portfolio__tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab {
+    padding: 10px 14px;
+  }
+
+  .subscribe {
+    padding: 24px 16px;
+  }
+
+  .subscribe__form {
+    max-width: 85%;
+  }
+}
