@@ -1,0 +1,38 @@
+.banner {
+  position: relative;
+  min-height: 350px;
+  background: url("../assets/banner.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0) 100%),
+    rgba(0, 0, 0, 0.55);
+}
+
+.banner h1,
+.banner p {
+  position: relative;
+  z-index: 1;
+}
+
+.banner h1 {
+  font-size: var(--font-size-main-heading);
+  font-weight: var(--font-weight-regular);
+  margin-bottom: 20px;
+}
+
+.banner p {
+  font-size: var(--font-size-text);
+  color: rgba(255, 255, 255, 0.85);
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar__close" id="sidebarClose">✕</button>
+        <img class="sidebar__avatar" src="./assets/sidebar-banner.jpg" alt="Profile" />
+        <nav class="sidebar__nav">
+            <button class="sidebar__link" data-tab="clientsBtn">Clients</button>
+            <button class="sidebar__link" data-tab="productsBtn">Products</button>
+            <button class="sidebar__link" data-tab="feedbackBtn">Feedback</button>
+        </nav>
+    </div>
+    <div class="sidebar__overlay" id="sidebarOverlay"></div>
+    <header class="site-header">
+        <button class="burger" id="burger" aria-label="Open menu">
+            <svg viewBox="0 0 488 488" id="burger-menu" width="24" height="24" fill="currentColor">
+                <path d="M64.192,108.444h359.617c29.943,0,54.223-24.278,54.223-54.222C478.031,24.278,453.754,0,423.809,0H64.192
+            C34.248,0,9.969,24.278,9.969,54.222C9.969,84.166,34.248,108.444,64.192,108.444z" />
+                <path d="M423.809,189.778H64.192c-29.944,0-54.223,24.278-54.223,54.222c0,29.943,24.278,54.223,54.223,54.223h359.617
+            c29.945,0,54.223-24.279,54.223-54.223C478.031,214.056,453.754,189.778,423.809,189.778z" />
+                <path d="M423.809,379.557H64.192c-29.944,0-54.223,24.277-54.223,54.222C9.969,463.722,34.248,488,64.192,488h359.617
+            c29.945,0,54.223-24.278,54.223-54.222C478.031,403.834,453.754,379.557,423.809,379.557z" />
+            </svg>
+        </button>
+    </header>
+
+    <section class="banner">
+        <h1>Let Make Something Great</h1>
+        <p>Lorem ipsum dolor sit amet consectelur adipisicing elit. Velit, incidunt?</p>
+    </section>
+
+    <section class="portfolio">
+
+
+        <h2 class="portfolio__title">Portfolio</h2>
+
+
+        <nav class="portfolio__tabs" role="tablist">
+            <button class="tab tab--active" id="clientsBtn" role="tab" aria-selected="true"
+                aria-controls="cardsContainer">Clients</button>
+            <button class="tab" id="productsBtn" role="tab" aria-selected="false"
+                aria-controls="cardsContainer">Products</button>
+            <button class="tab" id="feedbackBtn" role="tab" aria-selected="false"
+                aria-controls="cardsContainer">Feedback</button>
+        </nav>
+
+
+        <div class="cards-grid" id="cardsContainer" role="tabpanel">
+
+        </div>
+
+    </section>
+
+
+    <section class="subscribe">
+        <div class="subscribe__wrapper">
+            <h3 class="subscribe__heading">I WANT TO GET FRESH UPDATES</h3>
+            <div class="subscribe__form">
+                <div class="form-group">
+                    <label class="form-label" for="firstName">FIRST NAME</label>
+                    <input class="form-input" type="text" id="firstName" name="firstName" autocomplete="given-name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">EMAIL</label>
+                    <input class="form-input" type="email" id="email" name="email" autocomplete="email" />
+                </div>
+                <div class="form-group form-group--checkbox">
+                    <input class="form-checkbox" type="checkbox" id="agree" name="agree" />
+                    <label class="form-label form-label--checkbox" for="agree">
+                        I consent to the processing of personal data
+                    </label>
+                </div>
+                <button class="btn-subscribe" type="subscribe">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>All right reserved <span id="year"></span></p>
+    </footer>
+    <div class="modal" id="modal">
+        <div class="modal__box">
+            <button class="modal__close" id="modalClose">✕</button>
+            <p class="modal__message" id="modalMessage"></p>
+        </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
